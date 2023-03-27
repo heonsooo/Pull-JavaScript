@@ -177,7 +177,3 @@ TypeScript도 트랜스 파일러의 한 종류라고 할 수 있다.
     
 
 따라서 javaScript에서 다른 javascript를 모두 불러와서 html에서는 하나의 자바스크립트를 부르면 되게 된다.
-
-
-
-
