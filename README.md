@@ -3,7 +3,12 @@
 ---
 
 # Index
-
+- JavaScript 특징
+  - 객체 지향 언어
+  - 일급함수 
+  - 클로져
+- ECMAScript
+- 코드 작성 시 유의사항 (컨벤션)
 ## JavaScript 특징
 
 - 프로그래밍 언어의 유형
