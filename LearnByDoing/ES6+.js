@@ -63,3 +63,103 @@ console.log(`만날 때는 ${msgHi} 헤어질 때는 ${msgBye}`);
 // 문자열 조합으로 문자열과 변수를 합칠 때는, 띄어쓰기 등 어색하게 고려할 점이 많지만,
 // 템플릿 리터럴 사용 시, 하나의 문장 안에 변수를 ${} 를 통해 삽입할 수 있다.
 // 개발의 편의성 뿐만 아니라 가독성도 높아진다.
+
+//  ---------------------------------------------------------------------------------------------------------------------------------------
+// Symbol
+let abcd = "문자열 ABCD";
+let symAbcd = Symbol("심볼 ABCD");
+let symAbcd2 = Symbol("심볼 ABCD");
+
+console.log(typeof abcd);
+console.log(typeof symAbcd);
+
+let testObj = {};
+testObj[abcd] = "abcd_string";
+testObj[symAbcd] = "abcd_symbol";
+console.log(testObj);
+
+testObj["문자열 ABCD"] = "change!";
+testObj["심볼 ABCD"] = "change!";
+console.log(testObj);
+
+console.log(symAbcd, " ");
+console.log(symAbcd2);
+console.log(symAbcd === symAbcd2);
+
+console.log(symAbcd.toString());
+console.log(symAbcd2.toString());
+console.log(symAbcd.toString() === symAbcd2.toString());
+
+console.log(testObj);
+testObj[symAbcd.toString()] = "change!";
+console.log(testObj);
+
+for (const i of [...Array(5).keys()]) {
+  testObj[symAbcd.toString()] = i;
+}
+console.log(testObj);
+
+console.log(testVar());
+
+function testVar() {
+  console.log("var 함수 선언");
+}
+
+var testVar = "var 변수선언";
+console.log(testVar);
+
+console.log("===============\n");
+testVar = () => {
+  console.log(`${test} :호이스팅 `); // 호이스팅
+
+  var test = 10;
+  console.log(`${test} :선언 `); // 선언
+
+  var test = "재선언";
+  console.log(`${test} :재선언 `); // 재선언
+
+  test = 20;
+  console.log(`${test} :재할당 `); // 재할당
+};
+
+testVar();
+
+testHoisting1 = () => {
+  var a = 10;
+  var b;
+  console.log(`var a : ${a}`);
+  console.log(`선언 b : ${b}`);
+};
+testHoisting2 = () => {
+  var a = 10;
+  console.log(`var a : ${a}`);
+  console.log(`선언 b : ${b}`);
+  var b = 20;
+};
+
+testHoisting1();
+testHoisting2();
+
+testHoisting1 = () => {
+  var a = 10;
+  console.log(`var a : ${a}`);
+  console.log(`선언 b : ${b}`);
+  var b;
+};
+testHoisting1();
+
+testHoisting2 = () => {
+  let a = 10;
+  console.log(`let a : ${a}`);
+  console.log(`선언 b : ${b}`);
+  let b;
+};
+testHoisting2();
+
+testHoisting3 = () => {
+  const a = 10;
+  console.log(`const a : ${a}`);
+  console.log(`선언 b : ${b}`);
+  const b = 15;
+};
+testHoisting3();
