@@ -39,8 +39,6 @@ function newsFeed() {
         ${newsFeed[i].title} (${newsFeed[i].comments_count}) 
       </a>
     </li>
-
-    
     `);
   }
 
